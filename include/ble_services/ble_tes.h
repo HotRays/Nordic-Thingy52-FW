@@ -115,10 +115,10 @@ typedef PACKED( struct
 typedef PACKED( struct
 {
     uint16_t                temperature_interval_ms;
-    uint16_t                pressure_interval_ms;
+    // uint16_t                pressure_interval_ms;
     uint16_t                humidity_interval_ms;
-    uint16_t                color_interval_ms;
-    uint8_t                 gas_interval_mode;
+    // uint16_t                color_interval_ms;
+    // uint8_t                 gas_interval_mode;
     ble_tes_color_config_t  color_config;
 }) ble_tes_config_t;
 
@@ -160,10 +160,10 @@ typedef void (*ble_tes_evt_handler_t) (ble_tes_t        * p_tes,
 typedef struct
 {
     ble_tes_temperature_t * p_init_temperature;
-    ble_tes_pressure_t    * p_init_pressure;
+    // ble_tes_pressure_t    * p_init_pressure;
     ble_tes_humidity_t    * p_init_humidity;
-    ble_tes_gas_t         * p_init_gas;
-    ble_tes_color_t       * p_init_color;
+    // ble_tes_gas_t         * p_init_gas;
+    // ble_tes_color_t       * p_init_color;
     ble_tes_config_t      * p_init_config;
     ble_tes_evt_handler_t   evt_handler; /**< Event handler to be called for handling received data. */
 } ble_tes_init_t;
@@ -177,17 +177,17 @@ struct ble_tes_s
     uint8_t                  uuid_type;                    /**< UUID type for Thingy Environment Service Base UUID. */
     uint16_t                 service_handle;               /**< Handle of Thingy Environment Service (as provided by the S110 SoftDevice). */
     ble_gatts_char_handles_t temperature_handles;          /**< Handles related to the temperature characteristic (as provided by the S132 SoftDevice). */
-    ble_gatts_char_handles_t pressure_handles;             /**< Handles related to the pressure characteristic (as provided by the S132 SoftDevice). */
+    // ble_gatts_char_handles_t pressure_handles;             /**< Handles related to the pressure characteristic (as provided by the S132 SoftDevice). */
     ble_gatts_char_handles_t humidity_handles;             /**< Handles related to the humidity characteristic (as provided by the S132 SoftDevice). */
-    ble_gatts_char_handles_t gas_handles;                  /**< Handles related to the gas characteristic (as provided by the S132 SoftDevice). */
-    ble_gatts_char_handles_t color_handles;                /**< Handles related to the gas characteristic (as provided by the S132 SoftDevice). */
+    // ble_gatts_char_handles_t gas_handles;                  /**< Handles related to the gas characteristic (as provided by the S132 SoftDevice). */
+    // ble_gatts_char_handles_t color_handles;                /**< Handles related to the gas characteristic (as provided by the S132 SoftDevice). */
     ble_gatts_char_handles_t config_handles;               /**< Handles related to the config characteristic (as provided by the S132 SoftDevice). */
     uint16_t                 conn_handle;                  /**< Handle of the current connection (as provided by the S110 SoftDevice). BLE_CONN_HANDLE_INVALID if not in a connection. */
     bool                     is_temperature_notif_enabled; /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
-    bool                     is_pressure_notif_enabled;    /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
+    // bool                     is_pressure_notif_enabled;    /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
     bool                     is_humidity_notif_enabled;    /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
-    bool                     is_gas_notif_enabled;         /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
-    bool                     is_color_notif_enabled;       /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
+    // bool                     is_gas_notif_enabled;         /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
+    // bool                     is_color_notif_enabled;       /**< Variable to indicate if the peer has enabled notification of the characteristic.*/
     ble_tes_evt_handler_t    evt_handler;                  /**< Event handler to be called for handling received data. */
 };
 

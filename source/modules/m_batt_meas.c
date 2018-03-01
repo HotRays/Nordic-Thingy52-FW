@@ -484,8 +484,7 @@ uint32_t m_batt_meas_enable(uint32_t meas_interval_ms)
 
     if (m_batt_meas_param.batt_mon_en_pin_used)
     {
-        err_code = drv_ext_gpio_pin_set(m_batt_meas_param.batt_mon_en_pin_no);     // Enable battery monitoring.
-        RETURN_IF_ERROR(err_code);
+				nrf_gpio_pin_set(m_batt_meas_param.batt_mon_en_pin_no);     // Enable battery monitoring.
     }
 
     // Call for a battery voltage sample immediately after enabling battery measurements.
@@ -510,8 +509,7 @@ uint32_t m_batt_meas_disable(void)
 
     if (m_batt_meas_param.batt_mon_en_pin_used)
     {
-        err_code = drv_ext_gpio_pin_clear(m_batt_meas_param.batt_mon_en_pin_no);     // Disable battery monitoring to save power.
-        RETURN_IF_ERROR(err_code);
+				nrf_gpio_pin_clear(m_batt_meas_param.batt_mon_en_pin_no);     // Disable battery monitoring to save power.
     }
 
     err_code = app_timer_stop(batt_meas_app_timer_id);
@@ -541,11 +539,8 @@ uint32_t m_batt_meas_init(m_ble_service_handle_t * p_handle, batt_meas_init_t co
 
     if (m_batt_meas_param.batt_mon_en_pin_used)
     {
-        err_code = drv_ext_gpio_cfg_output(m_batt_meas_param.batt_mon_en_pin_no);
-        RETURN_IF_ERROR(err_code);
-
-        err_code = drv_ext_gpio_pin_clear(m_batt_meas_param.batt_mon_en_pin_no);     // Disable battery monitoring to save power.
-        RETURN_IF_ERROR(err_code);
+        nrf_gpio_cfg_output(m_batt_meas_param.batt_mon_en_pin_no);
+        nrf_gpio_pin_clear(m_batt_meas_param.batt_mon_en_pin_no);
     }
 
     nrf_gpio_cfg_input(m_batt_meas_param.batt_chg_stat_pin_no, NRF_GPIO_PIN_NOPULL);

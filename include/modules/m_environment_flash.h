@@ -79,25 +79,6 @@ uint32_t m_env_flash_config_store(const ble_tes_config_t * p_config);
  */
 uint32_t m_env_flash_config_load(ble_tes_config_t ** p_config);
 
-/**@brief Function for storing the gas sensor baseline.
- *
- * @param[in] p_baseline  Pointer to baseline to be stored.
- *
- * @retval NRF_SUCCESS      If initialization was successful.
- * @retval NRF_ERROR_NULL   If a NULL pointer was supplied.
- * @retval Other codes from the underlying drivers.
- */
-uint32_t m_env_flash_baseline_store(const m_gas_baseline_t * p_baseline);
-
-/**@brief Function for loading the gas sensor baseline.
- *
- * @param[out] p_baseline  Pointer to loaded baseline.
- *
- * @retval NRF_SUCCESS      If initialization was successful.
- * @retval Other codes from the underlying drivers.
- */
-uint32_t m_env_flash_baseline_load(m_gas_baseline_t ** p_baseline);
-
 /**@brief Function for initializing weather station flash handling.
  *
  * @param[in]  p_default_config     Pointer to default configuration.
@@ -110,9 +91,7 @@ uint32_t m_env_flash_baseline_load(m_gas_baseline_t ** p_baseline);
  * @retval Other codes from the underlying drivers.
  */
 uint32_t m_env_flash_init(const ble_tes_config_t * p_default_config,
-                          ble_tes_config_t ** p_config,
-                          const m_gas_baseline_t * p_default_baseline,
-                          m_gas_baseline_t      ** p_baseline);
+                          ble_tes_config_t ** p_config);
 
 #endif
 

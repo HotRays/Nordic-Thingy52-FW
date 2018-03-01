@@ -36,67 +36,49 @@
   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
- /** @file Environment module
- *
- * @defgroup m_environment Environment
+#ifndef FS_CONFIG_H__
+#define FS_CONFIG_H__
+
+/**
+ * @defgroup fstorage_config fstorage configuration
+ * @ingroup fstorage
  * @{
- * @ingroup modules
- * @brief Environment module API.
  *
+ * @brief fstorage configuration options.
  */
 
-#ifndef __ENVIRONMENT_H__
-#define __ENVIRONMENT_H__
 
-#include <stdint.h>
-#include <stdbool.h>
-#include "m_ble.h"
-#include "ble_tes.h"
-#include "nrf_drv_twi.h"
-
-/**@brief Initialization parameters. */
-typedef struct
-{
-    const nrf_drv_twi_t * p_twi_instance;
-} m_environment_init_t;
-
-/**@brief Weather station default configuration. */
-#define ENVIRONMENT_CONFIG_DEFAULT {        \
-    .temperature_interval_ms = 2000,        \
-    .humidity_interval_ms    = 2000,        \
-}
-
-#define ENVIRONMENT_BASELINE_DEFAULT {      \
-        .mode_250ms = 0,                    \
-        .mode_1s    = 0,                    \
-        .mode_10s   = 0,                    \
-        .mode_60s   = 0,                    \
-}
-
-/**@brief Function for starting the environment module.
- *
- * @details This function should be called after m_environment_init to start the environment module.
- *
- * @retval NRF_SUCCESS If initialization was successful.
+/**@brief   Configures the size of fstorage internal queue.
+ * @details Increase this if there are many users, or if it is likely that many operation will be
+ *          queued at once without waiting for the previous operations to complete. In general,
+ *          increase the queue size if you frequently receive @ref FS_ERR_QUEUE_FULL errors when
+ *          calling @ref fs_store or @ref fs_erase.
  */
-uint32_t m_environment_start(void);
+#define FS_QUEUE_SIZE       (5)
 
-/**@brief Function for stopping the environment module.
- *
- * @details This function should be called after m_environment_start to stop the environment module.
- *
- * @retval NRF_SUCCESS If initialization was successful.
+/**@brief   Configures how many times should fstorage attempt to execute an operation if
+ *          the SoftDevice fails to schedule flash access due to high BLE activity.
+ * @details Increase this value if fstorage events return the @ref FS_ERR_OPERATION_TIMEOUT error
+ *          often.
  */
-uint32_t m_environment_stop(void);
+#define FS_OP_MAX_RETRIES   (5)
 
-/**@brief Function for initializing the environment module.
+
+/**@brief   Configures the maximum number of words to be written to flash in a single operation.
+ *          If data length exceeds this value, the data will be written down in several chunks,
+ *          as necessary.
  *
- * @param[in] p_handle  Pointer to the location to store the service handle.
- * @param[in] p_params  Pointer to the init parameters.
- *
- * @retval NRF_SUCCESS  If initialization was successful.
+ * @details Tweaking this value can increase the chances of the SoftDevice being able to fit
+ *          flash operations in between radio activity. This value is bound by the maximum number
+ *          of words which the SoftDevice can write to flash in a single call to
+ *          @ref sd_flash_write, which is 256 words for nRF51 ICs and 1024 words for nRF52 ICs.
  */
-uint32_t m_environment_init(m_ble_service_handle_t * p_handle, m_environment_init_t * p_params);
+#if   defined (NRF51)
+    #define FS_MAX_WRITE_SIZE_WORDS     (256)
+#elif defined (NRF52)
+    #define FS_MAX_WRITE_SIZE_WORDS     (1024)
 #endif
 
 /** @} */
+
+#endif // FS_CONFIG_H__

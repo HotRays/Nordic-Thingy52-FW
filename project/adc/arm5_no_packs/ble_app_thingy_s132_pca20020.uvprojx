@@ -406,31 +406,6 @@
               <FilePath>..\..\..\source\modules\m_environment_flash.c</FilePath>
             </File>
             <File>
-              <FileName>m_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_motion_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_sound.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_sound.c</FilePath>
-            </File>
-            <File>
               <FileName>advertiser_beacon_timeslot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\util\advertiser_beacon_timeslot.c</FilePath>
@@ -465,71 +440,21 @@
               <FileType>5</FileType>
               <FilePath>..\config\thingy_config.h</FilePath>
             </File>
+            <File>
+              <FileName>m_ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_ui_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Thingy drivers</GroupName>
           <Files>
-            <File>
-              <FileName>drv_ext_light.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_light.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ccs811.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ccs811.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_gas_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_gas_sensor.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_bh1745.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_bh1745.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_color.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_color.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_speaker.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_speaker.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mpu9250.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mpu9250.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_acc_lis3dh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_acc_lis3dh.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_pressure.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_pressure.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lps22hb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_lps22hb.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_sx1509.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_sx1509.c</FilePath>
-            </File>
             <File>
               <FileName>drv_hts221.c</FileName>
               <FileType>1</FileType>
@@ -539,21 +464,6 @@
               <FileName>drv_humidity.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\drivers\drv_humidity.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ext_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>sx150x_led_drv_calc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\util\sx150x_led_drv_calc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mic.c</FilePath>
             </File>
             <File>
               <FileName>drv_nfc.c</FileName>
@@ -569,16 +479,6 @@
               <FileName>libmpllib.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\libs\libmpllib_Keil_M4FP\libmpllib.lib</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu.c</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
             <File>
               <FileName>data_builder.c</FileName>
@@ -1484,181 +1384,6 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: BV32FP</GroupName>
-          <Files>
-            <File>
-              <FileName>a2lsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\a2lsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>allpole.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allpole.c</FilePath>
-            </File>
-            <File>
-              <FileName>allzero.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allzero.c</FilePath>
-            </File>
-            <File>
-              <FileName>autocor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\autocor.c</FilePath>
-            </File>
-            <File>
-              <FileName>bitpack.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bitpack.c</FilePath>
-            </File>
-            <File>
-              <FileName>bvplc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bvplc.c</FilePath>
-            </File>
-            <File>
-              <FileName>cmtables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\cmtables.c</FilePath>
-            </File>
-            <File>
-              <FileName>coarptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\coarptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>decoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\decoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>excdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>excquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>fineptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\fineptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>gaindec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gaindec.c</FilePath>
-            </File>
-            <File>
-              <FileName>gainquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gainquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>levdur.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levdur.c</FilePath>
-            </File>
-            <File>
-              <FileName>levelest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levelest.c</FilePath>
-            </File>
-            <File>
-              <FileName>lsp2a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lsp2a.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblchck.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblchck.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblzlsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblzlsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>tables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\tables.c</FilePath>
-            </File>
-            <File>
-              <FileName>utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\utility.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: ADPCM</GroupName>
-          <Files>
-            <File>
-              <FileName>dvi_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\dvi_adpcm\dvi_adpcm.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>SR3_Audio</GroupName>
-          <Files>
-            <File>
-              <FileName>drv_audio_coder_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_adpcm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_coder_bv32fp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_bv32fp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_dsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_dsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_pdm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_pdm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\config\drv_audio_config.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2120,31 +1845,6 @@
               <FilePath>..\..\..\source\modules\m_environment_flash.c</FilePath>
             </File>
             <File>
-              <FileName>m_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_motion_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_sound.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_sound.c</FilePath>
-            </File>
-            <File>
               <FileName>advertiser_beacon_timeslot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\util\advertiser_beacon_timeslot.c</FilePath>
@@ -2179,71 +1879,21 @@
               <FileType>5</FileType>
               <FilePath>..\config\thingy_config.h</FilePath>
             </File>
+            <File>
+              <FileName>m_ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_ui_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Thingy drivers</GroupName>
           <Files>
-            <File>
-              <FileName>drv_ext_light.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_light.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ccs811.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ccs811.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_gas_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_gas_sensor.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_bh1745.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_bh1745.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_color.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_color.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_speaker.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_speaker.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mpu9250.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mpu9250.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_acc_lis3dh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_acc_lis3dh.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_pressure.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_pressure.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lps22hb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_lps22hb.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_sx1509.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_sx1509.c</FilePath>
-            </File>
             <File>
               <FileName>drv_hts221.c</FileName>
               <FileType>1</FileType>
@@ -2253,21 +1903,6 @@
               <FileName>drv_humidity.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\drivers\drv_humidity.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ext_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>sx150x_led_drv_calc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\util\sx150x_led_drv_calc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mic.c</FilePath>
             </File>
             <File>
               <FileName>drv_nfc.c</FileName>
@@ -2283,16 +1918,6 @@
               <FileName>libmpllib.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\libs\libmpllib_Keil_M4FP\libmpllib.lib</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu.c</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
             <File>
               <FileName>data_builder.c</FileName>
@@ -3198,181 +2823,6 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: BV32FP</GroupName>
-          <Files>
-            <File>
-              <FileName>a2lsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\a2lsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>allpole.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allpole.c</FilePath>
-            </File>
-            <File>
-              <FileName>allzero.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allzero.c</FilePath>
-            </File>
-            <File>
-              <FileName>autocor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\autocor.c</FilePath>
-            </File>
-            <File>
-              <FileName>bitpack.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bitpack.c</FilePath>
-            </File>
-            <File>
-              <FileName>bvplc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bvplc.c</FilePath>
-            </File>
-            <File>
-              <FileName>cmtables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\cmtables.c</FilePath>
-            </File>
-            <File>
-              <FileName>coarptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\coarptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>decoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\decoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>excdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>excquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>fineptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\fineptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>gaindec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gaindec.c</FilePath>
-            </File>
-            <File>
-              <FileName>gainquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gainquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>levdur.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levdur.c</FilePath>
-            </File>
-            <File>
-              <FileName>levelest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levelest.c</FilePath>
-            </File>
-            <File>
-              <FileName>lsp2a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lsp2a.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblchck.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblchck.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblzlsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblzlsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>tables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\tables.c</FilePath>
-            </File>
-            <File>
-              <FileName>utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\utility.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: ADPCM</GroupName>
-          <Files>
-            <File>
-              <FileName>dvi_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\dvi_adpcm\dvi_adpcm.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>SR3_Audio</GroupName>
-          <Files>
-            <File>
-              <FileName>drv_audio_coder_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_adpcm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_coder_bv32fp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_bv32fp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_dsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_dsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_pdm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_pdm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\config\drv_audio_config.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3834,31 +3284,6 @@
               <FilePath>..\..\..\source\modules\m_environment_flash.c</FilePath>
             </File>
             <File>
-              <FileName>m_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_motion_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_sound.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_sound.c</FilePath>
-            </File>
-            <File>
               <FileName>advertiser_beacon_timeslot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\util\advertiser_beacon_timeslot.c</FilePath>
@@ -3893,71 +3318,21 @@
               <FileType>5</FileType>
               <FilePath>..\config\thingy_config.h</FilePath>
             </File>
+            <File>
+              <FileName>m_ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_ui_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Thingy drivers</GroupName>
           <Files>
-            <File>
-              <FileName>drv_ext_light.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_light.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ccs811.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ccs811.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_gas_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_gas_sensor.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_bh1745.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_bh1745.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_color.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_color.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_speaker.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_speaker.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mpu9250.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mpu9250.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_acc_lis3dh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_acc_lis3dh.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_pressure.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_pressure.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lps22hb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_lps22hb.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_sx1509.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_sx1509.c</FilePath>
-            </File>
             <File>
               <FileName>drv_hts221.c</FileName>
               <FileType>1</FileType>
@@ -3967,21 +3342,6 @@
               <FileName>drv_humidity.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\drivers\drv_humidity.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ext_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>sx150x_led_drv_calc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\util\sx150x_led_drv_calc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mic.c</FilePath>
             </File>
             <File>
               <FileName>drv_nfc.c</FileName>
@@ -3997,16 +3357,6 @@
               <FileName>libmpllib.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\libs\libmpllib_Keil_M4FP\libmpllib.lib</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu.c</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
             <File>
               <FileName>data_builder.c</FileName>
@@ -4912,181 +4262,6 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: BV32FP</GroupName>
-          <Files>
-            <File>
-              <FileName>a2lsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\a2lsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>allpole.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allpole.c</FilePath>
-            </File>
-            <File>
-              <FileName>allzero.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allzero.c</FilePath>
-            </File>
-            <File>
-              <FileName>autocor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\autocor.c</FilePath>
-            </File>
-            <File>
-              <FileName>bitpack.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bitpack.c</FilePath>
-            </File>
-            <File>
-              <FileName>bvplc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bvplc.c</FilePath>
-            </File>
-            <File>
-              <FileName>cmtables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\cmtables.c</FilePath>
-            </File>
-            <File>
-              <FileName>coarptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\coarptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>decoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\decoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>excdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>excquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>fineptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\fineptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>gaindec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gaindec.c</FilePath>
-            </File>
-            <File>
-              <FileName>gainquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gainquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>levdur.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levdur.c</FilePath>
-            </File>
-            <File>
-              <FileName>levelest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levelest.c</FilePath>
-            </File>
-            <File>
-              <FileName>lsp2a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lsp2a.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblchck.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblchck.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblzlsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblzlsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>tables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\tables.c</FilePath>
-            </File>
-            <File>
-              <FileName>utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\utility.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: ADPCM</GroupName>
-          <Files>
-            <File>
-              <FileName>dvi_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\dvi_adpcm\dvi_adpcm.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>SR3_Audio</GroupName>
-          <Files>
-            <File>
-              <FileName>drv_audio_coder_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_adpcm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_coder_bv32fp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_bv32fp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_dsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_dsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_pdm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_pdm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\config\drv_audio_config.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5548,31 +4723,6 @@
               <FilePath>..\..\..\source\modules\m_environment_flash.c</FilePath>
             </File>
             <File>
-              <FileName>m_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_motion_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_motion_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_ui_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>m_sound.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\modules\m_sound.c</FilePath>
-            </File>
-            <File>
               <FileName>advertiser_beacon_timeslot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\util\advertiser_beacon_timeslot.c</FilePath>
@@ -5607,71 +4757,21 @@
               <FileType>5</FileType>
               <FilePath>..\config\thingy_config.h</FilePath>
             </File>
+            <File>
+              <FileName>m_ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_ui_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\source\modules\m_ui_flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Thingy drivers</GroupName>
           <Files>
-            <File>
-              <FileName>drv_ext_light.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_light.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ccs811.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ccs811.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_gas_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_gas_sensor.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_bh1745.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_bh1745.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_color.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_color.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_speaker.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_speaker.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mpu9250.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mpu9250.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_motion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_motion.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_acc_lis3dh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_acc_lis3dh.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_pressure.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_pressure.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lps22hb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_lps22hb.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_sx1509.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_sx1509.c</FilePath>
-            </File>
             <File>
               <FileName>drv_hts221.c</FileName>
               <FileType>1</FileType>
@@ -5681,21 +4781,6 @@
               <FileName>drv_humidity.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\source\drivers\drv_humidity.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_ext_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_ext_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>sx150x_led_drv_calc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\util\sx150x_led_drv_calc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_mic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\source\drivers\drv_mic.c</FilePath>
             </File>
             <File>
               <FileName>drv_nfc.c</FileName>
@@ -5711,16 +4796,6 @@
               <FileName>libmpllib.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\libs\libmpllib_Keil_M4FP\libmpllib.lib</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu.c</FilePath>
-            </File>
-            <File>
-              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\eMD6\core\driver\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
             <File>
               <FileName>data_builder.c</FileName>
@@ -6626,181 +5701,6 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: BV32FP</GroupName>
-          <Files>
-            <File>
-              <FileName>a2lsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\a2lsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>allpole.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allpole.c</FilePath>
-            </File>
-            <File>
-              <FileName>allzero.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\allzero.c</FilePath>
-            </File>
-            <File>
-              <FileName>autocor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\autocor.c</FilePath>
-            </File>
-            <File>
-              <FileName>bitpack.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bitpack.c</FilePath>
-            </File>
-            <File>
-              <FileName>bvplc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\bvplc.c</FilePath>
-            </File>
-            <File>
-              <FileName>cmtables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\cmtables.c</FilePath>
-            </File>
-            <File>
-              <FileName>coarptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\coarptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>decoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\decoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>excdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>excquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\excquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>fineptch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\fineptch.c</FilePath>
-            </File>
-            <File>
-              <FileName>gaindec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gaindec.c</FilePath>
-            </File>
-            <File>
-              <FileName>gainquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\gainquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>levdur.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levdur.c</FilePath>
-            </File>
-            <File>
-              <FileName>levelest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\levelest.c</FilePath>
-            </File>
-            <File>
-              <FileName>lsp2a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lsp2a.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>lspquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\lspquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>ptquan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\ptquan.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblchck.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblchck.c</FilePath>
-            </File>
-            <File>
-              <FileName>stblzlsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\stblzlsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>tables.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\tables.c</FilePath>
-            </File>
-            <File>
-              <FileName>utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\bv32fp-1.2\utility.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Codec: ADPCM</GroupName>
-          <Files>
-            <File>
-              <FileName>dvi_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\dvi_adpcm\dvi_adpcm.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>SR3_Audio</GroupName>
-          <Files>
-            <File>
-              <FileName>drv_audio_coder_adpcm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_adpcm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_coder_bv32fp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_coder_bv32fp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_dsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_dsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_pdm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\libs\sr3_audio\drv_audio_pdm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_audio_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\config\drv_audio_config.h</FilePath>
             </File>
           </Files>
         </Group>

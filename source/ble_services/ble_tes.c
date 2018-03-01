@@ -41,10 +41,7 @@
 #include "sdk_common.h"
 
 #define BLE_UUID_TES_TEMPERATURE_CHAR 0x0201                      /**< The UUID of the temperature Characteristic. */
-#define BLE_UUID_TES_PRESSURE_CHAR    0x0202                      /**< The UUID of the pressure Characteristic. */
 #define BLE_UUID_TES_HUMIDITY_CHAR    0x0203                      /**< The UUID of the humidity Characteristic. */
-#define BLE_UUID_TES_GAS_CHAR         0x0204                      /**< The UUID of the gas Characteristic. */
-#define BLE_UUID_TES_COLOR_CHAR       0x0205                      /**< The UUID of the gas Characteristic. */
 #define BLE_UUID_TES_CONFIG_CHAR      0x0206                      /**< The UUID of the config Characteristic. */
 
 
@@ -104,23 +101,6 @@ static void on_write(ble_tes_t * p_tes, ble_evt_t * p_ble_evt)
             }
         }
     }
-    else if ( (p_evt_write->handle == p_tes->pressure_handles.cccd_handle) &&
-         (p_evt_write->len == 2) )
-    {
-        bool notif_enabled;
-
-        notif_enabled = ble_srv_is_notification_enabled(p_evt_write->data);
-
-        if (p_tes->is_pressure_notif_enabled != notif_enabled)
-        {
-            p_tes->is_pressure_notif_enabled = notif_enabled;
-
-            if (p_tes->evt_handler != NULL)
-            {
-                p_tes->evt_handler(p_tes, BLE_TES_EVT_NOTIF_PRESSURE, p_evt_write->data, p_evt_write->len);
-            }
-        }
-    }
     else if ( (p_evt_write->handle == p_tes->humidity_handles.cccd_handle) &&
          (p_evt_write->len == 2) )
     {
@@ -135,40 +115,6 @@ static void on_write(ble_tes_t * p_tes, ble_evt_t * p_ble_evt)
             if (p_tes->evt_handler != NULL)
             {
                 p_tes->evt_handler(p_tes, BLE_TES_EVT_NOTIF_HUMIDITY, p_evt_write->data, p_evt_write->len);
-            }
-        }
-    }
-    else if ( (p_evt_write->handle == p_tes->gas_handles.cccd_handle) &&
-         (p_evt_write->len == 2) )
-    {
-        bool notif_enabled;
-
-        notif_enabled = ble_srv_is_notification_enabled(p_evt_write->data);
-
-        if (notif_enabled != p_tes->is_gas_notif_enabled)
-        {
-            p_tes->is_gas_notif_enabled = notif_enabled;
-
-            if (p_tes->evt_handler != NULL)
-            {
-                p_tes->evt_handler(p_tes, BLE_TES_EVT_NOTIF_GAS, p_evt_write->data, p_evt_write->len);
-            }
-        }
-    }
-    else if ( (p_evt_write->handle == p_tes->color_handles.cccd_handle) &&
-         (p_evt_write->len == 2) )
-    {
-        bool notif_enabled;
-
-        notif_enabled = ble_srv_is_notification_enabled(p_evt_write->data);
-
-        if (notif_enabled != p_tes->is_color_notif_enabled)
-        {
-            p_tes->is_color_notif_enabled = notif_enabled;
-
-            if (p_tes->evt_handler != NULL)
-            {
-                p_tes->evt_handler(p_tes, BLE_TES_EVT_NOTIF_COLOR, p_evt_write->data, p_evt_write->len);
             }
         }
     }
@@ -202,14 +148,8 @@ static void on_authorize_req(ble_tes_t * p_tes, ble_evt_t * p_ble_evt)
 
                 if ( (p_config->temperature_interval_ms < BLE_TES_CONFIG_TEMPERATURE_INT_MIN)    ||
                      (p_config->temperature_interval_ms > BLE_TES_CONFIG_TEMPERATURE_INT_MAX)    ||
-                     (p_config->pressure_interval_ms < BLE_TES_CONFIG_PRESSURE_INT_MIN)          ||
-                     (p_config->pressure_interval_ms > BLE_TES_CONFIG_PRESSURE_INT_MAX)          ||
                      (p_config->humidity_interval_ms < BLE_TES_CONFIG_HUMIDITY_INT_MIN)          ||
-                     (p_config->humidity_interval_ms > BLE_TES_CONFIG_HUMIDITY_INT_MAX)          ||
-                     (p_config->color_interval_ms < BLE_TES_CONFIG_COLOR_INT_MIN)         ||
-                     (p_config->color_interval_ms > BLE_TES_CONFIG_COLOR_INT_MAX)         ||
-                     (p_config->gas_interval_mode < BLE_TES_CONFIG_GAS_MODE_MIN)                 ||
-                     ((int)p_config->gas_interval_mode > (int)BLE_TES_CONFIG_GAS_MODE_MAX))
+                     (p_config->humidity_interval_ms > BLE_TES_CONFIG_HUMIDITY_INT_MAX))
                 {
                     valid_data = false;
                 }
@@ -307,66 +247,6 @@ static uint32_t temperature_char_add(ble_tes_t * p_tes, const ble_tes_init_t * p
 }
 
 
-/**@brief Function for adding pressure characteristic.
- *
- * @param[in] p_tes       Thingy Environment Service structure.
- * @param[in] p_tes_init  Information needed to initialize the service.
- *
- * @return NRF_SUCCESS on success, otherwise an error code.
- */
-static uint32_t pressure_char_add(ble_tes_t * p_tes, const ble_tes_init_t * p_tes_init)
-{
-    ble_gatts_char_md_t char_md;
-    ble_gatts_attr_md_t cccd_md;
-    ble_gatts_attr_t    attr_char_value;
-    ble_uuid_t          ble_uuid;
-    ble_gatts_attr_md_t attr_md;
-
-    memset(&cccd_md, 0, sizeof(cccd_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.write_perm);
-
-    cccd_md.vloc = BLE_GATTS_VLOC_STACK;
-
-    memset(&char_md, 0, sizeof(char_md));
-
-    char_md.char_props.notify = 1;
-    char_md.p_char_user_desc  = NULL;
-    char_md.p_char_pf         = NULL;
-    char_md.p_user_desc_md    = NULL;
-    char_md.p_cccd_md         = &cccd_md;
-    char_md.p_sccd_md         = NULL;
-
-    ble_uuid.type = p_tes->uuid_type;
-    ble_uuid.uuid = BLE_UUID_TES_PRESSURE_CHAR;
-
-    memset(&attr_md, 0, sizeof(attr_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.write_perm);
-
-    attr_md.vloc    = BLE_GATTS_VLOC_STACK;
-    attr_md.rd_auth = 0;
-    attr_md.wr_auth = 0;
-    attr_md.vlen    = 0;
-
-    memset(&attr_char_value, 0, sizeof(attr_char_value));
-
-    attr_char_value.p_uuid    = &ble_uuid;
-    attr_char_value.p_attr_md = &attr_md;
-    attr_char_value.init_len  = sizeof(ble_tes_pressure_t);
-    attr_char_value.init_offs = 0;
-    attr_char_value.p_value   = (uint8_t *)p_tes_init->p_init_pressure;
-    attr_char_value.max_len   = sizeof(ble_tes_pressure_t);;
-
-    return sd_ble_gatts_characteristic_add(p_tes->service_handle,
-                                           &char_md,
-                                           &attr_char_value,
-                                           &p_tes->pressure_handles);
-}
-
-
 /**@brief Function for adding humidity characteristic.
  *
  * @param[in] p_tes       Thingy Environment Service structure.
@@ -424,126 +304,6 @@ static uint32_t humidity_char_add(ble_tes_t * p_tes, const ble_tes_init_t * p_te
                                            &char_md,
                                            &attr_char_value,
                                            &p_tes->humidity_handles);
-}
-
-
-/**@brief Function for adding gas characteristic.
- *
- * @param[in] p_tes       Thingy Environment Service structure.
- * @param[in] p_tes_init  Information needed to initialize the service.
- *
- * @return NRF_SUCCESS on success, otherwise an error code.
- */
-static uint32_t gas_char_add(ble_tes_t * p_tes, const ble_tes_init_t * p_tes_init)
-{
-    ble_gatts_char_md_t char_md;
-    ble_gatts_attr_md_t cccd_md;
-    ble_gatts_attr_t    attr_char_value;
-    ble_uuid_t          ble_uuid;
-    ble_gatts_attr_md_t attr_md;
-
-    memset(&cccd_md, 0, sizeof(cccd_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.write_perm);
-
-    cccd_md.vloc = BLE_GATTS_VLOC_STACK;
-
-    memset(&char_md, 0, sizeof(char_md));
-
-    char_md.char_props.notify = 1;
-    char_md.p_char_user_desc  = NULL;
-    char_md.p_char_pf         = NULL;
-    char_md.p_user_desc_md    = NULL;
-    char_md.p_cccd_md         = &cccd_md;
-    char_md.p_sccd_md         = NULL;
-
-    ble_uuid.type = p_tes->uuid_type;
-    ble_uuid.uuid = BLE_UUID_TES_GAS_CHAR;
-
-    memset(&attr_md, 0, sizeof(attr_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.write_perm);
-
-    attr_md.vloc    = BLE_GATTS_VLOC_STACK;
-    attr_md.rd_auth = 0;
-    attr_md.wr_auth = 0;
-    attr_md.vlen    = 0;
-
-    memset(&attr_char_value, 0, sizeof(attr_char_value));
-
-    attr_char_value.p_uuid    = &ble_uuid;
-    attr_char_value.p_attr_md = &attr_md;
-    attr_char_value.init_len  = sizeof(ble_tes_gas_t);
-    attr_char_value.init_offs = 0;
-    attr_char_value.p_value   = (uint8_t *)p_tes_init->p_init_gas;
-    attr_char_value.max_len   = sizeof(ble_tes_gas_t);
-
-    return sd_ble_gatts_characteristic_add(p_tes->service_handle,
-                                           &char_md,
-                                           &attr_char_value,
-                                           &p_tes->gas_handles);
-}
-
-
-/**@brief Function for adding color characteristic.
- *
- * @param[in] p_tes       Thingy Environment Service structure.
- * @param[in] p_tes_init  Information needed to initialize the service.
- *
- * @return NRF_SUCCESS on success, otherwise an error code.
- */
-static uint32_t color_char_add(ble_tes_t * p_tes, const ble_tes_init_t * p_tes_init)
-{
-    ble_gatts_char_md_t char_md;
-    ble_gatts_attr_md_t cccd_md;
-    ble_gatts_attr_t    attr_char_value;
-    ble_uuid_t          ble_uuid;
-    ble_gatts_attr_md_t attr_md;
-
-    memset(&cccd_md, 0, sizeof(cccd_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&cccd_md.write_perm);
-
-    cccd_md.vloc = BLE_GATTS_VLOC_STACK;
-
-    memset(&char_md, 0, sizeof(char_md));
-
-    char_md.char_props.notify = 1;
-    char_md.p_char_user_desc  = NULL;
-    char_md.p_char_pf         = NULL;
-    char_md.p_user_desc_md    = NULL;
-    char_md.p_cccd_md         = &cccd_md;
-    char_md.p_sccd_md         = NULL;
-
-    ble_uuid.type = p_tes->uuid_type;
-    ble_uuid.uuid = BLE_UUID_TES_COLOR_CHAR;
-
-    memset(&attr_md, 0, sizeof(attr_md));
-
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.read_perm);
-    BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(&attr_md.write_perm);
-
-    attr_md.vloc    = BLE_GATTS_VLOC_STACK;
-    attr_md.rd_auth = 0;
-    attr_md.wr_auth = 0;
-    attr_md.vlen    = 0;
-
-    memset(&attr_char_value, 0, sizeof(attr_char_value));
-
-    attr_char_value.p_uuid    = &ble_uuid;
-    attr_char_value.p_attr_md = &attr_md;
-    attr_char_value.init_len  = sizeof(ble_tes_color_t);
-    attr_char_value.init_offs = 0;
-    attr_char_value.p_value   = (uint8_t *)p_tes_init->p_init_color;
-    attr_char_value.max_len   = sizeof(ble_tes_color_t);
-
-    return sd_ble_gatts_characteristic_add(p_tes->service_handle,
-                                           &char_md,
-                                           &attr_char_value,
-                                           &p_tes->color_handles);
 }
 
 
@@ -646,7 +406,6 @@ uint32_t ble_tes_init(ble_tes_t * p_tes, const ble_tes_init_t * p_tes_init)
     p_tes->conn_handle                  = BLE_CONN_HANDLE_INVALID;
     p_tes->evt_handler                  = p_tes_init->evt_handler;
     p_tes->is_temperature_notif_enabled = false;
-    p_tes->is_pressure_notif_enabled    = false;
     p_tes->is_humidity_notif_enabled    = false;
 
     // Add a custom base UUID.
@@ -666,20 +425,8 @@ uint32_t ble_tes_init(ble_tes_t * p_tes, const ble_tes_init_t * p_tes_init)
     err_code = temperature_char_add(p_tes, p_tes_init);
     VERIFY_SUCCESS(err_code);
 
-    // Add the pressure Characteristic.
-    err_code = pressure_char_add(p_tes, p_tes_init);
-    VERIFY_SUCCESS(err_code);
-
     // Add the humidity Characteristic.
     err_code = humidity_char_add(p_tes, p_tes_init);
-    VERIFY_SUCCESS(err_code);
-
-    // Add the gas Characteristic.
-    err_code = gas_char_add(p_tes, p_tes_init);
-    VERIFY_SUCCESS(err_code);
-
-    // Add the color Characteristic.
-    err_code = color_char_add(p_tes, p_tes_init);
     VERIFY_SUCCESS(err_code);
 
     // Add the config Characteristic.
@@ -717,35 +464,6 @@ uint32_t ble_tes_temperature_set(ble_tes_t * p_tes, ble_tes_temperature_t * p_da
     return sd_ble_gatts_hvx(p_tes->conn_handle, &hvx_params);
 }
 
-
-uint32_t ble_tes_pressure_set(ble_tes_t * p_tes, ble_tes_pressure_t * p_data)
-{
-    ble_gatts_hvx_params_t hvx_params;
-    uint16_t               length = sizeof(ble_tes_pressure_t);
-
-    VERIFY_PARAM_NOT_NULL(p_tes);
-
-    if ((p_tes->conn_handle == BLE_CONN_HANDLE_INVALID) || (!p_tes->is_pressure_notif_enabled))
-    {
-        return NRF_ERROR_INVALID_STATE;
-    }
-
-    if (length > BLE_TES_MAX_DATA_LEN)
-    {
-        return NRF_ERROR_INVALID_PARAM;
-    }
-
-    memset(&hvx_params, 0, sizeof(hvx_params));
-
-    hvx_params.handle = p_tes->pressure_handles.value_handle;
-    hvx_params.p_data = (uint8_t *)p_data;
-    hvx_params.p_len  = &length;
-    hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;
-
-    return sd_ble_gatts_hvx(p_tes->conn_handle, &hvx_params);
-}
-
-
 uint32_t ble_tes_humidity_set(ble_tes_t * p_tes, ble_tes_humidity_t * p_data)
 {
     ble_gatts_hvx_params_t hvx_params;
@@ -766,62 +484,6 @@ uint32_t ble_tes_humidity_set(ble_tes_t * p_tes, ble_tes_humidity_t * p_data)
     memset(&hvx_params, 0, sizeof(hvx_params));
 
     hvx_params.handle = p_tes->humidity_handles.value_handle;
-    hvx_params.p_data = (uint8_t *)p_data;
-    hvx_params.p_len  = &length;
-    hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;
-
-    return sd_ble_gatts_hvx(p_tes->conn_handle, &hvx_params);
-}
-
-
-uint32_t ble_tes_gas_set(ble_tes_t * p_tes, ble_tes_gas_t * p_data)
-{
-    ble_gatts_hvx_params_t hvx_params;
-    uint16_t               length = sizeof(ble_tes_gas_t);
-
-    VERIFY_PARAM_NOT_NULL(p_tes);
-
-    if ((p_tes->conn_handle == BLE_CONN_HANDLE_INVALID) || (!p_tes->is_gas_notif_enabled))
-    {
-        return NRF_ERROR_INVALID_STATE;
-    }
-
-    if (length > BLE_TES_MAX_DATA_LEN)
-    {
-        return NRF_ERROR_INVALID_PARAM;
-    }
-
-    memset(&hvx_params, 0, sizeof(hvx_params));
-
-    hvx_params.handle = p_tes->gas_handles.value_handle;
-    hvx_params.p_data = (uint8_t *)p_data;
-    hvx_params.p_len  = &length;
-    hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;
-
-    return sd_ble_gatts_hvx(p_tes->conn_handle, &hvx_params);
-}
-
-
-uint32_t ble_tes_color_set(ble_tes_t * p_tes, ble_tes_color_t * p_data)
-{
-    ble_gatts_hvx_params_t hvx_params;
-    uint16_t               length = sizeof(ble_tes_color_t);
-
-    VERIFY_PARAM_NOT_NULL(p_tes);
-
-    if ((p_tes->conn_handle == BLE_CONN_HANDLE_INVALID) || (!p_tes->is_color_notif_enabled))
-    {
-        return NRF_ERROR_INVALID_STATE;
-    }
-
-    if (length > BLE_TES_MAX_DATA_LEN)
-    {
-        return NRF_ERROR_INVALID_PARAM;
-    }
-
-    memset(&hvx_params, 0, sizeof(hvx_params));
-
-    hvx_params.handle = p_tes->color_handles.value_handle;
     hvx_params.p_data = (uint8_t *)p_data;
     hvx_params.p_len  = &length;
     hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;

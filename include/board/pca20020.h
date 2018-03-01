@@ -171,124 +171,7 @@ typedef enum
 }vdd_state_t;
 
 // IO extender pin configuration for system off
-#define SX_IOEXT_NUM_PINS                   16
-
-#define SX_IOEXT_0                          0
-#define IOEXT_PIN00_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_CLEAR
-
-#define SX_IOEXT_1                          1
-#define IOEXT_PIN01_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_CLEAR
-
-#define SX_IOEXT_2                          2
-#define IOEXT_PIN02_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_CLEAR
-
-#if defined(THINGY_HW_v0_7_0)
-    #define SX_BAT_CHG_EN                   3
-    #define IOEXT_PIN03_SYSTEM_DEFAULT_CFG  SX_PIN_INPUT_NOPULL
-#elif  defined(THINGY_HW_v0_8_0)
-    #define SX_BAT_CHG_EN                   3
-    #define IOEXT_PIN03_SYSTEM_DEFAULT_CFG  SX_PIN_INPUT_NOPULL
-#else
-    #define SX_IOEXT_3                      3
-    #define IOEXT_PIN03_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#endif
-
-#if defined(THINGY_HW_v0_7_0)
-    #define SX_SPK_PWR_CTRL                 4
-    #define IOEXT_PIN04_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#elif defined(THINGY_HW_v0_8_0)
-    #define SX_SPK_PWR_CTRL                 4
-    #define IOEXT_PIN04_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#else
-    #define SX_BAT_MON_EN                   4
-    #define IOEXT_PIN04_SYSTEM_DEFAULT_CFG  SX_PIN_INPUT_NOPULL
-#endif
-
-#define SX_LIGHTWELL_G                      5
-#define IOEXT_PIN05_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#define SX_LIGHTWELL_B                      6
-#define IOEXT_PIN06_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#define SX_LIGHTWELL_R                      7
-#define IOEXT_PIN07_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#if defined(THINGY_HW_v0_7_0)
-    #define SX_MPU_PWR_CTRL                 8
-    #define IOEXT_PIN08_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_8_0)
-    #define SX_MPU_PWR_CTRL                 8
-    #define IOEXT_PIN08_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_9_0)
-    #define SX_MPU_PWR_CTRL                 8
-    #define IOEXT_PIN08_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#else
-    #define SX_MPU_PWR_CTRL                 8
-    #define IOEXT_PIN08_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#endif
-
-#if defined(THINGY_HW_v0_7_0)
-    #define SX_MIC_PWR_CTRL                 9
-    #define IOEXT_PIN09_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_8_0)
-    #define SX_MIC_PWR_CTRL                 9
-    #define IOEXT_PIN09_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_9_0)
-    #define SX_MIC_PWR_CTRL                 9
-    #define IOEXT_PIN09_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#else
-    #define SX_MIC_PWR_CTRL                 9
-    #define IOEXT_PIN09_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#endif
-
-#if defined(THINGY_HW_v0_7_0)
-    #define SX_CCS_PWR_CTRL                 10
-    #define IOEXT_PIN10_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_8_0)
-    #define SX_CCS_PWR_CTRL                 10
-    #define IOEXT_PIN10_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#elif defined(THINGY_HW_v0_9_0)
-    #define SX_CCS_PWR_CTRL                 10
-    #define IOEXT_PIN10_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_SET
-#else
-    #define SX_CCS_PWR_CTRL                 10
-    #define IOEXT_PIN10_SYSTEM_DEFAULT_CFG  SX_PIN_OUTPUT_CLEAR
-#endif
-
-#define SX_CCS_RESET                        11
-#define IOEXT_PIN11_SYSTEM_DEFAULT_CFG      SX_PIN_INPUT_PULLDOWN
-
-#define SX_CCS_WAKE                         12
-#define IOEXT_PIN12_SYSTEM_DEFAULT_CFG      SX_PIN_INPUT_PULLDOWN
-
-#define SX_SENSE_LED_R                      13
-#define IOEXT_PIN13_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#define SX_SENSE_LED_G                      14
-#define IOEXT_PIN14_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#define SX_SENSE_LED_B                      15
-#define IOEXT_PIN15_SYSTEM_DEFAULT_CFG      SX_PIN_OUTPUT_SET
-
-#define IOEXT_SYSTEM_DEFAULT_PIN_CFG \
-{                                    \
-    IOEXT_PIN00_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN01_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN02_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN03_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN04_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN05_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN06_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN07_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN08_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN09_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN10_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN11_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN12_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN13_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN14_SYSTEM_DEFAULT_CFG,  \
-    IOEXT_PIN15_SYSTEM_DEFAULT_CFG   \
-};
+//nil
 
 //nRF pin configuration for system off
 #define NRF_NUM_GPIO_PINS                   32
@@ -541,7 +424,7 @@ static const uint8_t BATT_MEAS_VOLTAGE_TO_SOC[] = {
     #define BAT_MON_EN_PIN_NO     BATT_MEAS_INVALID_PIN
 #else
     #define BAT_MON_EN_PIN_USED   true
-    #define BAT_MON_EN_PIN_NO     SX_BAT_MON_EN
+    #define BAT_MON_EN_PIN_NO     BATT_MEAS_INVALID_PIN
 #endif
 
 // Battery monitoring setup.

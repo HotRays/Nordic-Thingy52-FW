@@ -46,7 +46,7 @@
 #include "nrf_log.h"
 #include "nrf_delay.h"
 #include "pca20020.h"
-#include "drv_ext_gpio.h"
+// #include "drv_ext_gpio.h"
 #include "macros_common.h"
 
 ret_code_t support_func_ble_mac_address_get(char * p_mac_addr)
@@ -90,24 +90,6 @@ bool support_func_sys_halt_debug_enabled(void)
 }
 
 
-/**@brief Configures a single IO extender pin.
- */
-static ret_code_t ioext_pin_cfg(uint8_t pin, sx_gpio_cfg_t ioext_sys_pin_cfg)
-{
-    ret_code_t err_code;
-    
-    err_code = drv_ext_gpio_cfg(pin,
-                     ioext_sys_pin_cfg.dir,
-                     ioext_sys_pin_cfg.input_buf,
-                     ioext_sys_pin_cfg.pull_config,
-                     ioext_sys_pin_cfg.drive_type,
-                     ioext_sys_pin_cfg.slew_rate);
-    RETURN_IF_ERROR(err_code);
-
-    return NRF_SUCCESS;
-}
-
-
 /**@brief Configures a single nRF pin.
  */
 static ret_code_t nrf_pin_cfg(uint8_t pin, nrf_gpio_cfg_t  nrf_sys_pin_cfg)
@@ -142,44 +124,6 @@ static ret_code_t nrf_pin_cfg(uint8_t pin, nrf_gpio_cfg_t  nrf_sys_pin_cfg)
 
     return NRF_SUCCESS;
 }    
-
-
-/**@brief Traverses all IO extender pins and calls ioext_pin_cfg.
- */
-static ret_code_t configure_default_ioext_gpio_state(bool boot)
-{
-    ret_code_t err_code;
-    
-    sx_gpio_cfg_t  ioext_sys_pin_cfg[SX_IOEXT_NUM_PINS] = IOEXT_SYSTEM_DEFAULT_PIN_CFG;
-
-    /* Set all IO extender pins in default state. IO extender will be powered down as well,
-    Hence, this config will not be retained when VDD is turned off. */
-    
-    // Prior to setting direction, ensure that all ouput data buffers contains the correct value.
-    if (boot)
-    {
-        uint16_t ext_gpio_init_pin_state = 0;
-        
-        for (uint8_t i = 0; i < SX_IOEXT_NUM_PINS; i++)
-        {
-            if (ioext_sys_pin_cfg[i].state == PIN_SET)
-            {
-                ext_gpio_init_pin_state |= (1 << i);
-            }
-        }
-        
-        err_code = drv_ext_gpio_reg_data_init(ext_gpio_init_pin_state);
-        RETURN_IF_ERROR(err_code);
-    }
-    
-    for (uint8_t i = 0; i < SX_IOEXT_NUM_PINS; i++)
-    {
-        err_code = ioext_pin_cfg(i, ioext_sys_pin_cfg[i]); 
-        RETURN_IF_ERROR(err_code);
-    }
-
-    return NRF_SUCCESS;
-}
 
 
 /**@brief Traverses all nRF pins and calls nrf_pin_cfg.
@@ -230,13 +174,7 @@ ret_code_t support_func_configure_io_startup(drv_ext_gpio_init_t const * const p
     nrf_gpio_cfg_output(VDD_PWR_CTRL);
     nrf_gpio_pin_set(VDD_PWR_CTRL);
     nrf_delay_ms(5);
-    
-    err_code = drv_ext_gpio_init(p_ext_gpio_init, true);
-    RETURN_IF_ERROR(err_code);
-
-    err_code = configure_default_ioext_gpio_state(true);
-    RETURN_IF_ERROR(err_code);
-    
+        
     return NRF_SUCCESS;
 }
 
@@ -244,9 +182,7 @@ ret_code_t support_func_configure_io_startup(drv_ext_gpio_init_t const * const p
 ret_code_t support_func_configure_io_shutdown(void)
 {
     ret_code_t err_code;
-    
-    err_code = configure_default_ioext_gpio_state(false);
-    
+        
     #if defined(THINGY_HW_v0_7_0) ||  defined(THINGY_HW_v0_8_0) || defined(THINGY_HW_v0_9_0)
         RETURN_IF_ERROR(err_code);
     #else
